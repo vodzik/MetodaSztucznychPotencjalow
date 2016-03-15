@@ -1,0 +1,6 @@
+function [f] = attraction( distance )
+%zwraca potencja³ generowany przez cel (powinien zwiêkszaæ siê wraz z odleg³oœci¹)
+f=(1*distance)-10/distance;
+
+end
+

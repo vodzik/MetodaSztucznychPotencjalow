@@ -24,17 +24,17 @@ plot(target(:,1),target(:,2),'.r')
         %wizualizacja rozmieszczenia ³adunków i celu
 
 
-grid_resolution= 200; %rozdzielczoœæ wizualizacji pola potencja³ów
+grid_resolution= 100; %rozdzielczoœæ wizualizacji pola potencja³ów
 
-xmin = -40;
-xmax = 40;
+xmin = -20;
+xmax = 20;
 
-ymin = -40;
-ymax = 40;
+ymin = -20;
+ymax = 20;
 %rozpiêtoœæ wizualizacji
 
-zmax = 70; %maksymalna wartoœæ potencja³u
-zmin = -20 % minimalna wartoœæ potencja³u
+zmax = 55; %maksymalna wartoœæ potencja³u
+zmin = -55 % minimalna wartoœæ potencja³u
 
 
 
@@ -68,8 +68,8 @@ for i=1:grid_resolution
        z(i,j)=zmax; 
     end
     
-      if z(i,j)<zmin
-       z(i,j)=zmin; 
+      if z(i,j)<zm
+       z(i,j)=zmax; 
     end
 end
 end
