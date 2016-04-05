@@ -4,7 +4,7 @@ size_of_obstacles=size(obstacles);
 
 number_of_obstacles=size_of_obstacles(1)
 charges=0;
-caunter=0;
+counter=0;
 for i=1:number_of_obstacles
     
     k=1;
@@ -15,23 +15,23 @@ for i=1:number_of_obstacles
     end
         
     for j=obstacles(i,1):k/density:obstacles(i,3)
-        caunter=caunter+1;
-        charges(caunter,1)=j;
-        charges(caunter,2)=obstacles(i,2);
-        caunter=caunter+1;
-        charges(caunter,1)=j;
-        charges(caunter,2)=obstacles(i,4);
+        counter=counter+1;
+        charges(counter,1)=j;
+        charges(counter,2)=obstacles(i,2);
+        counter=counter+1;
+        charges(counter,1)=j;
+        charges(counter,2)=obstacles(i,4);
     end
         
     for j=obstacles(i,2):l/density:obstacles(i,4)
-        caunter=caunter+1;
-        charges(caunter,1)=obstacles(i,1);
-        charges(caunter,2)=j;
+        counter=counter+1;
+        charges(counter,1)=obstacles(i,1);
+        charges(counter,2)=j;
         
-        caunter=caunter+1;
+        counter=counter+1;
        
-        charges(caunter,1)=obstacles(i,3);
-         charges(caunter,2)=j;
+        charges(counter,1)=obstacles(i,3);
+         charges(counter,2)=j;
     end
     
     

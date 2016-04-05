@@ -1,9 +1,9 @@
 function [ potential ] = field( x,y,charges,target)
 
-%funkcja wylicza wartoœæ potrencja³u w punkcie "x","y" d³a ³adunków
+%funkcja wylicza wartoœæ potencja³u w punkcie "x","y" d³a ³adunków
 %odpychaj¹cych "charges" i celu "target".
-
-
+Q=5;
+ni=2;
 potential=0;  %wartosc potencja³u (na pocz¹tku równa 0)
 
 number_of_charges=size(charges);
@@ -11,8 +11,10 @@ number_of_charges=number_of_charges(1);  %number_of_charges okreœla iloœæ ³adunk
 
 potential=potential+attraction(sqrt((target(1,1)-x)^2+(target(1,2)-y)^2)); % dodanie potencja³u pochodzacego od celu
 
-for i=1:number_of_charges
-   potential=potential+repulsion(sqrt((charges(i,1)-x)^2+(charges(i,2)-y)^2)); %dodawanie potencja³ów z kolejnych ³adunków
+for i=1:number_of_charges    
+    if sqrt((charges(i,1)-x)^2+(charges(i,2)-y)^2) <= Q
+        potential=potential+0.5*ni*(repulsion(sqrt((charges(i,1)-x)^2+(charges(i,2)-y)^2))-repulsion(Q))^2; %dodawanie potencja³ów z kolejnych ³adunków
+    end
 end
 
 end
